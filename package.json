@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.13.1",
+    "node-restify": "^0.2.1",
     "pg": "^4.4.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.5.1"
