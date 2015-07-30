@@ -4,9 +4,10 @@ module.exports = function(sequelize, DataTypes) {
     quantity: DataTypes.INTEGER,
     product_id: DataTypes.INTEGER
   }, {
+    underscored: true,
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        models.Inventory.belongsTo(models.Product);
       }
     }
   });

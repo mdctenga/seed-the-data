@@ -1,7 +1,7 @@
 var faker = require('faker');
 var restify = require('restify');
 
-var restify = require('restify');
+var models = require('./models');
 
 var server = restify.createServer({
   name: 'myapp',

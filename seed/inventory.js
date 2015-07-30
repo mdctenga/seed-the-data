@@ -1,5 +1,5 @@
 var models = require('../models');
-var Product = models.inventory;
+var Inventory = models.Inventory;
 var faker = require('faker');
 
 models.sequelize
@@ -11,7 +11,6 @@ models.sequelize
         quantity: parseFloat(faker.random.number())
       });
     }
-
-    Product.bulkCreate(productArray);
+    Inventory.bulkCreate(inventoryArray);
     console.log("connected to the database!");
   });
