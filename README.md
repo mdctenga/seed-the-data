@@ -14,3 +14,12 @@ Build an Inventory Database
 - Price DECIMAL(2)
 - createdAt DATETIME
 - upDatedAt DATETIME
+
+
+# After creating REST server
+Create one more table
+
+## Inventory
+- id
+- quantity Integer
+- product_id FK
