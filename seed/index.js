@@ -1,6 +1,7 @@
 var models = require('../models');
 var Product = models.Product;
 var Inventory = models.Inventory;
+var Order = models.Order;
 var faker = require('faker');
 
 models.sequelize
@@ -15,8 +16,8 @@ models.sequelize
       });
     }
 
+    console.log("seeding products!");
     Product.bulkCreate(productArray);
-    console.log("connected to the database!");
   })
   .then(function () {
     var inventoryArray = [];
@@ -26,6 +27,18 @@ models.sequelize
         product_id: i + 1
       });
     }
+    console.log("seeding inventory!");
     Inventory.bulkCreate(inventoryArray);
-    console.log("connected to the database!");
+  })
+  .then(function () {
+    var orderArray = [];
+    for (var i = 0; i < 10; i += 1) {
+      orderArray.push({
+        name: faker.name.firstName(),
+        quantity: faker.random.number(),
+        product_id: i + 1
+      });
+    }
+    console.log("seeding order!");
+    Order.bulkCreate(orderArray);
   });
