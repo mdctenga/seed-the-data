@@ -1,5 +1,6 @@
 var models = require('../models');
 var Product = models.Product;
+var Inventory = models.Inventory;
 var faker = require('faker');
 
 models.sequelize
@@ -15,5 +16,16 @@ models.sequelize
     }
 
     Product.bulkCreate(productArray);
+    console.log("connected to the database!");
+  })
+  .then(function () {
+    var inventoryArray = [];
+    for (var i = 0; i < 10; i += 1) {
+      inventoryArray.push({
+        quantity: faker.random.number(),
+        product_id: i + 1
+      });
+    }
+    Inventory.bulkCreate(inventoryArray);
     console.log("connected to the database!");
   });
